@@ -1,4 +1,4 @@
-package com.imooc.no_transaction;
+package com.imooc.transaction_templdate;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 

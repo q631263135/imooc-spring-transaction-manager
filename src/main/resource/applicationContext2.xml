@@ -14,11 +14,26 @@
         <property name="password" value="${jdbc.password}"></property>
     </bean>
 
-    <bean id="accountService" class="com.imooc.no_transaction.AccountServiceImpl">
+    <bean id="accountService" class="com.imooc.transaction_templdate.AccountServiceImpl">
         <property name="accountDao" ref="accountDao"/>
     </bean>
 
-    <bean id="accountDao" class="com.imooc.no_transaction.AccountDaoImpl">
+    <bean id="accountDao" class="com.imooc.transaction_templdate.AccountDaoImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="accountServiceProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="target" ref="accountService"/>
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="trans*">PROPAGATION_REQUIRED,+java.lang.ArithmeticException</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>
