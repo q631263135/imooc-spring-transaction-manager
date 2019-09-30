@@ -1,7 +1,6 @@
-package com.imooc.transaction_templdate;
+package com.imooc.transaction_template;
 
 import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 

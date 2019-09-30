@@ -1,4 +1,4 @@
-package com.imooc.transaction_templdate;
+package com.imooc.transaction_template;
 
 /**
  * <br/>

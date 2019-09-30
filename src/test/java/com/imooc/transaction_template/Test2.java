@@ -1,8 +1,5 @@
-package com.imooc.transaction_templdate;
+package com.imooc.transaction_template;
 
-import static org.junit.Assert.*;
-
-import com.imooc.transaction_templdate.AccountService;
 import javax.annotation.Resource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
